@@ -1,0 +1,16 @@
+# Adopt version 2 syntax:
+#   https://docs.docker.com/compose/compose-file/#/versioning
+version: '2'
+
+volumes:
+    database_data:
+        driver: local
+
+services:
+    main:
+        image: ubuntu:latest
+        ports:
+            - 8080:80
+        tty: true
+        volumes:
+            - ./public:/home
